@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "inicio": "Home",
+    "sobre": "About",
+    "trajetoria": "History",
+    "projetos": "Projects",
+    "contato": "Contact"
+  },
+  "hero": {
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+  },
+  "about": {
+    "title": "About",
+    "text1": "The {highlight} project is an educational program that challenges engineering students to design, build and pilot radio-controlled aircraft.",
+    "highlight1": "SAE AeroDesign",
+    "text2": "The main objective is the improvement of technical and practical knowledge, putting students in contact with industrial tools, design methodologies and teamwork.",
+    "text3": "In the {highlight} class, the challenge is to develop an aircraft capable of carrying payload, made with simple materials and with severe geometry and weight restrictions, requiring high structural and aerodynamic efficiency.",
+    "highlight3": "Micro"
+  },
+  "trajectory": {
+    "title": "Our History",
+    "subtitle": "From 2010 until today, we have built a history of victories, learning and overcoming, making UFSJ a reference in national aerodesign.",
+    "timeline": {
+      "2010": {
+        "title": "Foundation",
+        "description": "Creation of Trem Ki Voa Micro Team at UFSJ."
+      },
+      "2012": {
+        "title": "First Competition",
+        "description": "Participation in SAE Brasil Aerodesign competition."
+      },
+      "2015": {
+        "title": "Expansion",
+        "description": "Team growth and new aircraft projects."
+      },
+      "2018": {
+        "title": "Recognition",
+        "description": "Awards in national aerodesign competitions."
+      },
+      "2023": {
+        "title": "Innovation",
+        "description": "Development of new technologies and methodologies."
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "Trem Ki Voa's strength comes from the dedication and passion of each of our members."
+  },
+  "contact": {
+    "title": "Contact",
+    "email": "Email",
+    "captain": "Captain",
+    "administrative": "Administrative"
+  },
+  "footer": {
+    "copyright": "Trem Ki Voa Micro."
+  }
+}

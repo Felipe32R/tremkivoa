@@ -9,6 +9,53 @@ import { onMounted, onUnmounted, ref } from "vue";
 
 const container = ref(null);
 let scene, camera, renderer, airplane, animationFrame;
+let baseScale = 0.25;
+let baseOffsetX = -2.5;
+let baseOffsetY = -10;
+let oscillationY = 0.3;
+
+// Get responsive multipliers based on screen width
+function getResponsiveValues() {
+  const w = window.innerWidth;
+
+  if (w < 480) {
+    // Mobile small
+    return {
+      scaleMult: 0.5,
+      offsetX: -1.2,
+      offsetY: 1.5,
+      oscillationY: 0.15,
+      fov: 60,
+    };
+  } else if (w < 768) {
+    // Mobile / Tablet small
+    return {
+      scaleMult: 0.65,
+      offsetX: -1.8,
+      offsetY: 1.0,
+      oscillationY: 0.2,
+      fov: 55,
+    };
+  } else if (w < 1024) {
+    // Tablet
+    return {
+      scaleMult: 0.8,
+      offsetX: -2.2,
+      offsetY: 0.5,
+      oscillationY: 0.25,
+      fov: 52,
+    };
+  } else {
+    // Desktop
+    return {
+      scaleMult: 1,
+      offsetX: -2.5,
+      offsetY: 0,
+      oscillationY: 0.3,
+      fov: 50,
+    };
+  }
+}
 
 onMounted(() => {
   initScene();
@@ -32,8 +79,9 @@ function initScene() {
 
   const w = window.innerWidth;
   const h = window.innerHeight;
+  const { fov } = getResponsiveValues();
 
-  camera = new THREE.PerspectiveCamera(50, w / h, 0.1, 2000);
+  camera = new THREE.PerspectiveCamera(fov, w / h, 0.1, 2000);
 
   // câmera distante → avião pequeno
   camera.position.set(0, 1, 10);
@@ -58,17 +106,27 @@ function loadModel() {
   loader.load(url, (gltf) => {
     airplane = gltf.scene;
 
-    // Tamanho inicial
-    airplane.scale.set(0.25, 0.25, 0.25);
+    const {
+      scaleMult,
+      offsetX,
+      offsetY,
+      oscillationY: oscY,
+    } = getResponsiveValues();
+    baseScale = 0.25 * scaleMult;
+    baseOffsetX = offsetX;
+    baseOffsetY = offsetY;
+    oscillationY = oscY;
+
+    // Tamanho inicial responsivo
+    airplane.scale.set(baseScale, baseScale, baseScale);
 
     scene.add(airplane);
 
     // Primeiro: centraliza e ajusta o modelo à câmera
     fitModelToCamera(airplane);
 
-    // Depois: desloca para a esquerda
-    // valor negativo = esquerda
-    airplane.position.x -= 2.5; // ajuste fino aqui (entre -1 e -5 normalmente)
+    // Depois: desloca para a esquerda (responsivo)
+    airplane.position.x += baseOffsetX;
     onScroll();
   });
 }
@@ -108,16 +166,21 @@ function onScroll() {
   // Curvas suaves
   const curve = t * 1.2;
 
-  // 1. Avião diminui de tamanho
+  // 1. Avião diminui de tamanho (responsivo)
   const scale = 1 - t * 0.9; // mínimo ~0.2
-  airplane.scale.set(scale * 0.1, scale * 0.1, scale * 0.1);
+  const currentScale = scale * baseScale * 0.4;
+  airplane.scale.set(currentScale, currentScale, currentScale);
 
-  // 2. Avião sai pela direita
-  // Quanto maior a distância, mais longe ele vai sumir
-  airplane.position.x = t * 10;
+  // 2. Avião sai pela direita (desativado no mobile)
+  const isMobile = window.innerWidth < 1300;
+  if (isMobile) {
+    airplane.position.x = 0; // centralizado no mobile
+  } else {
+    airplane.position.x = t * 10;
+  }
 
-  // 3. Pequena oscilação vertical
-  airplane.position.y = Math.sin(t * 6) * 0.3;
+  // 3. Pequena oscilação vertical (responsivo)
+  airplane.position.y = baseOffsetY + Math.sin(t * 6) * oscillationY;
 
   // 4. Rotação suave (mantém animação aérea)
   airplane.rotation.y = t * 3;
@@ -140,6 +203,24 @@ function onResize() {
   camera.updateProjectionMatrix();
 
   renderer.setSize(w, h);
+
+  // Update responsive values on resize
+  const {
+    scaleMult,
+    offsetX,
+    offsetY,
+    oscillationY: oscY,
+    fov,
+  } = getResponsiveValues();
+  baseScale = 0.25 * scaleMult;
+  baseOffsetX = offsetX;
+  baseOffsetY = offsetY;
+  oscillationY = oscY;
+  camera.fov = fov;
+  camera.updateProjectionMatrix();
+
+  // Reapply scroll position with new values
+  onScroll();
 }
 </script>
 

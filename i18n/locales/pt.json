@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "inicio": "Inicio",
+    "sobre": "Sobre",
+    "trajetoria": "Trajetoria",
+    "projetos": "Projetos",
+    "contato": "Contato"
+  },
+  "hero": {
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+  },
+  "about": {
+    "title": "Sobre",
+    "text1": "O projeto {highlight} e um programa educacional que desafia estudantes de engenharia a projetar, construir e pilotar aeronaves radiocontroladas.",
+    "highlight1": "SAE AeroDesign",
+    "text2": "O principal objetivo e o aprimoramento do conhecimento tecnico e pratico, colocando os alunos em contato com ferramentas industriais, metodologias de projeto e trabalho em equipe.",
+    "text3": "Na classe {highlight}, o desafio e desenvolver uma aeronave capaz de transportar carga util, feita com materiais simples e com restricoes severas de geometria e peso, exigindo alta eficiencia estrutural e aerodinamica.",
+    "highlight3": "Micro"
+  },
+  "trajectory": {
+    "title": "Nossa Trajetoria",
+    "subtitle": "De 2010 ate hoje, construimos uma historia de vitorias, aprendizado e superacao, tornando a UFSJ uma referencia no aerodesign nacional.",
+    "timeline": {
+      "2010": {
+        "title": "Fundacao",
+        "description": "Criacao da Equipe Trem Ki Voa Micro na UFSJ."
+      },
+      "2012": {
+        "title": "Primeira Competicao",
+        "description": "Participacao na competicao SAE Brasil Aerodesign."
+      },
+      "2015": {
+        "title": "Expansao",
+        "description": "Crescimento da equipe e novos projetos de aeronaves."
+      },
+      "2018": {
+        "title": "Reconhecimento",
+        "description": "Premiacao em competicoes nacionais de aerodesign."
+      },
+      "2023": {
+        "title": "Inovacao",
+        "description": "Desenvolvimento de novas tecnologias e metodologias."
+      }
+    }
+  },
+  "projects": {
+    "title": "Projetos"
+  },
+  "team": {
+    "title": "Nossa Equipe",
+    "subtitle": "A forca da Trem Ki Voa vem da dedicacao e paixao de cada um de nossos membros."
+  },
+  "contact": {
+    "title": "Contato",
+    "email": "Email",
+    "captain": "Capitao",
+    "administrative": "Administrativo"
+  },
+  "footer": {
+    "copyright": "Trem Ki Voa Micro."
+  }
+}

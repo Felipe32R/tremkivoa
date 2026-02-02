@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-opensans: "Open Sans", sans-serif;
+  --color-blue-dark: #00003e;
+  --color-blue-light: #54547e;
+  --color-blue-border: #b0b0c3;
+  --color-white-off: #f8f8f6;
+  --color-red-tkv: #ba0e0a;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+/* Fluid typography base sizes */
+body {
+  font-family: var(--font-opensans);
+  overflow-x: hidden;
+  font-size: clamp(0.875rem, 0.8rem + 0.4vw, 1rem);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-montserrat);
+  line-height: 1.2;
+}
+
+/* Fluid heading sizes */
+h1 {
+  font-size: clamp(2rem, 1.5rem + 2.5vw, 4.5rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 1.25rem + 2vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+}
+
+/* Responsive spacing utilities */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
