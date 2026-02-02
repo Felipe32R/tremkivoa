@@ -31,7 +31,7 @@ const { t } = useI18n();
         class="text-2xl md:text-3xl lg:text-3xl font-bold text-white-off lg:-mt-20"
       >
         <p>TREM KI VOA</p>
-        <span class="text-red-tkv">MICRO</span>
+        <span class="text-red-tkv font-sans italic">micro</span>
       </h1>
 
       <AirplaneScene />

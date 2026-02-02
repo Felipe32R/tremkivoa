@@ -1,10 +1,8 @@
 @import "tailwindcss";
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-
 @theme {
-  --font-montserrat: "Montserrat", sans-serif;
-  --font-opensans: "Open Sans", sans-serif;
+  --font-sans: "IBM Plex Sans", sans-serif;
+  --font-inter: "Inter", sans-serif;
   --color-blue-dark: #00003e;
   --color-blue-light: #54547e;
   --color-blue-border: #b0b0c3;
@@ -19,7 +17,7 @@ html {
 
 /* Fluid typography base sizes */
 body {
-  font-family: var(--font-opensans);
+  font-family: var(--font-inter);
   overflow-x: hidden;
   font-size: clamp(0.875rem, 0.8rem + 0.4vw, 1rem);
   line-height: 1.6;
@@ -31,7 +29,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-montserrat);
+  font-family: var(--font-sans);
   line-height: 1.2;
 }
 
