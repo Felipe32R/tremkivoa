@@ -1,24 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n();
 
-interface TeamMember {
-  id: number;
-  name: string;
-  role: string;
-  image?: string;
-}
-
-const teamMembers: TeamMember[] = [
-  { id: 1, name: "Nome", role: "CARGO" },
-  { id: 2, name: "Nome", role: "CARGO" },
-  { id: 3, name: "Nome", role: "CARGO" },
-  { id: 4, name: "Nome", role: "CARGO" },
-  { id: 5, name: "Nome", role: "CARGO" },
-  { id: 6, name: "Nome", role: "CARGO" },
-  { id: 7, name: "Nome", role: "CARGO" },
-  { id: 8, name: "Nome", role: "CARGO" },
-  { id: 9, name: "Nome", role: "CARGO" },
-];
+import { teamMembers } from "@/data/team";
 </script>
 
 <template>

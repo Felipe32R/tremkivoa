@@ -7,54 +7,141 @@
     "contato": "Contato"
   },
   "hero": {
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+    "description": "A Trem Ki Voa Micro é a equipe de Aerodesign da UFSJ, multicampeã nacional na classe Micro da competição SAE AeroDesign. Desenvolvemos aeronaves rádio controladas de alto desempenho, aliando engenharia, inovação e excelência técnica."
   },
   "about": {
     "title": "Sobre",
-    "text1": "O projeto {highlight} e um programa educacional que desafia estudantes de engenharia a projetar, construir e pilotar aeronaves radiocontroladas.",
+    "text1": "O {highlight} é um programa educacional promovido pela SAE Internacional desde 1986 e realizado no Brasil desde 1999.",
     "highlight1": "SAE AeroDesign",
-    "text2": "O principal objetivo e o aprimoramento do conhecimento tecnico e pratico, colocando os alunos em contato com ferramentas industriais, metodologias de projeto e trabalho em equipe.",
-    "text3": "Na classe {highlight}, o desafio e desenvolver uma aeronave capaz de transportar carga util, feita com materiais simples e com restricoes severas de geometria e peso, exigindo alta eficiencia estrutural e aerodinamica.",
+    "text2": "A competição desafia estudantes de engenharia a projetar, construir e validar aeronaves rádio controladas, aplicando metodologias industriais, simulações, ensaios estruturais e integração multidisciplinar.",
+    "text3": "Na classe {highlight}, desenvolvemos um veículo aéreo não tripulado (VANT) capaz de transportar carga com máxima eficiência estrutural e aerodinâmica, respeitando rigorosas restrições de geometria, peso e regulamento.",
     "highlight3": "Micro"
   },
   "trajectory": {
-    "title": "Nossa Trajetoria",
-    "subtitle": "De 2010 ate hoje, construimos uma historia de vitorias, aprendizado e superacao, tornando a UFSJ uma referencia no aerodesign nacional.",
+    "title": "Nossa Trajetória",
+    "subtitle": "Desde 2010, construímos uma história marcada por títulos nacionais, participações mundiais e excelência técnica em projeto aeronáutico.",
     "timeline": {
       "2010": {
-        "title": "Fundacao",
-        "description": "Criacao da Equipe Trem Ki Voa Micro na UFSJ."
+        "title": "Fundação",
+        "description": "Criação da Equipe Trem Ki Voa Micro na UFSJ."
       },
       "2012": {
-        "title": "Primeira Competicao",
-        "description": "Participacao na competicao SAE Brasil Aerodesign."
+        "title": "Vice-Campeonato Nacional",
+        "description": "2º lugar na SAE Brasil Aerodesign."
+      },
+      "2014": {
+        "title": "Primeiro Título Nacional",
+        "description": "Campeã nacional da classe Micro e classificação para o mundial SAE Aerodesign East 2015."
       },
       "2015": {
-        "title": "Expansao",
-        "description": "Crescimento da equipe e novos projetos de aeronaves."
+        "title": "Vice-Campeã Mundial",
+        "description": "2º lugar geral na SAE Aerodesign East (EUA), 1º lugar em maior carga transportada."
       },
-      "2018": {
-        "title": "Reconhecimento",
-        "description": "Premiacao em competicoes nacionais de aerodesign."
+      "2016": {
+        "title": "Bicampeonato Nacional",
+        "description": "1º lugar na classe Micro e destaque em relatórios técnicos e integração de projeto."
       },
-      "2023": {
-        "title": "Inovacao",
-        "description": "Desenvolvimento de novas tecnologias e metodologias."
+      "2017": {
+        "title": "Tricampeonato Nacional",
+        "description": "Campeã nacional e classificação para o mundial 2018."
+      },
+      "2019": {
+        "title": "Tetracampeonato Nacional",
+        "description": "Maior pontuação de projeto e classificação para o mundial 2020."
+      },
+      "2021": {
+        "title": "Pentacampeonato Nacional",
+        "description": "1º lugar na competição nacional e 7º lugar geral no mundial 2022."
+      },
+      "2024": {
+        "title": "Vice-Campeã Nacional",
+        "description": "Retorno aos voos válidos pós-pandemia e vice-campeonato nacional."
       }
     }
   },
   "projects": {
-    "title": "Projetos"
+    "title": "Projetos e Cases de Destaque",
+    "subtitle": "Marcos técnicos que consolidaram a Trem Ki Voa Micro como referência nacional.",
+    "items": [
+      {
+        "id": 1,
+        "year": "2015",
+        "title": "Vice-Campeonato Mundial – SAE Aerodesign East",
+        "description": "2º lugar geral na competição mundial realizada nos Estados Unidos.",
+        "competition": "SAE Aerodesign East",
+        "placement": "2º Lugar Geral",
+        "category": "Micro",
+        "highlights": [
+          "1º lugar em maior peso carregado",
+          "3º lugar em eficiência estrutural"
+        ]
+      },
+      {
+        "id": 2,
+        "year": "2019",
+        "title": "Tetracampeonato Nacional",
+        "description": "Maior pontuação de projeto da competição nacional.",
+        "competition": "SAE Brasil Aerodesign",
+        "placement": "1º Lugar Nacional",
+        "category": "Micro",
+        "highlights": [
+          "Maior carga transportada",
+          "Maior acuracidade de missão",
+          "Melhor relatório de integração"
+        ]
+      },
+      {
+        "id": 3,
+        "year": "2021",
+        "title": "Pentacampeonato Nacional",
+        "description": "Conquista do quinto título nacional da equipe.",
+        "competition": "SAE Brasil Aerodesign",
+        "placement": "1º Lugar Nacional",
+        "category": "Micro",
+        "highlights": [
+          "2ª maior nota de relatório de plantas",
+          "Classificação para o mundial 2022"
+        ]
+      },
+      {
+        "id": 4,
+        "year": "2024",
+        "title": "Vice-Campeã Nacional",
+        "description": "Retorno aos voos válidos pós-pandemia.",
+        "competition": "SAE Brasil Aerodesign",
+        "placement": "2º Lugar Nacional",
+        "category": "Micro",
+        "highlights": [
+          "Melhor apresentação oral",
+          "Melhor projeto da classe Micro",
+          "Vice por apenas 2 pontos"
+        ]
+      }
+    ]
   },
   "team": {
     "title": "Nossa Equipe",
-    "subtitle": "A forca da Trem Ki Voa vem da dedicacao e paixao de cada um de nossos membros."
+    "subtitle": "A forca da Trem Ki Voa vem da dedicacao e paixao de cada um de nossos membros.",
+    "members": [
+      { "id": 1, "name": "João Silva", "role": "Capitão" },
+      { "id": 2, "name": "Maria Oliveira", "role": "Subcapitã" },
+      { "id": 3, "name": "Carlos Santos", "role": "Engenharia Estrutural" },
+      { "id": 4, "name": "Ana Souza", "role": "Aerodinâmica" },
+      { "id": 5, "name": "Lucas Ferreira", "role": "Desempenho" },
+      { "id": 6, "name": "Beatriz Lima", "role": "Integração" },
+      { "id": 7, "name": "Rafael Costa", "role": "Manufatura" },
+      { "id": 8, "name": "Juliana Rocha", "role": "Relatórios Técnicos" },
+      { "id": 9, "name": "Pedro Almeida", "role": "Logística" }
+    ]
   },
   "contact": {
     "title": "Contato",
-    "email": "Email",
-    "captain": "Capitao",
-    "administrative": "Administrativo"
+    "labels": {
+      "email": "Email",
+      "captain": "Capitão",
+      "administrative": "Administrativo",
+      "address": "Endereço"
+    }
   },
   "footer": {
     "copyright": "Trem Ki Voa Micro."

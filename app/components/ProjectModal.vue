@@ -1,11 +1,14 @@
 <script setup lang="ts">
 interface Project {
   id: number;
-  name: string;
   year: string;
-  description?: string;
+  title: string;
+  description: string;
+  competition: string;
+  placement: string;
+  category: string;
+  highlights: string[];
 }
-
 const props = defineProps<{
   project: Project | null;
   isOpen: boolean;
@@ -47,7 +50,7 @@ watch(
     } else {
       document.body.style.overflow = "";
     }
-  }
+  },
 );
 </script>
 
@@ -102,7 +105,7 @@ watch(
           <!-- Project Info -->
           <div class="p-4 text-white-off">
             <div class="flex items-center gap-3 mb-3">
-              <h2 class="text-xl font-bold">{{ project.name }}</h2>
+              <h2 class="text-xl font-bold">{{ project.title }}</h2>
               <span
                 class="text-red-tkv text-xs font-semibold bg-red-tkv/20 px-2 py-0.5 rounded-full"
               >
@@ -118,22 +121,29 @@ watch(
             </p>
 
             <!-- Specifications Grid -->
-            <div class="grid grid-cols-2 gap-3">
-              <div class="bg-white-off/5 rounded-lg p-3">
-                <h3 class="text-sm font-bold mb-2">Especificacoes</h3>
-                <ul class="space-y-1 text-white-off/70 text-xs">
-                  <li>Envergadura: --</li>
-                  <li>Peso: --</li>
-                  <li>Motor: --</li>
-                </ul>
+            <div class="grid grid-cols-1 gap-4 mt-6">
+              <!-- Competition Info -->
+              <div class="bg-white-off/5 rounded-lg p-4">
+                <h3 class="text-sm font-bold mb-2">Competição</h3>
+                <p class="text-white-off/80 text-sm">
+                  {{ project.competition }}
+                </p>
               </div>
 
-              <div class="bg-white-off/5 rounded-lg p-3">
-                <h3 class="text-sm font-bold mb-2">Resultados</h3>
+              <!-- Results -->
+              <div class="bg-white-off/5 rounded-lg p-4">
+                <h3 class="text-sm font-bold mb-2">Resultado</h3>
+                <p class="text-red-tkv font-semibold text-sm mb-2">
+                  {{ project.placement }}
+                </p>
+                <p class="text-white-off/70 text-xs mb-3">
+                  Categoria: {{ project.category }}
+                </p>
+
                 <ul class="space-y-1 text-white-off/70 text-xs">
-                  <li>Competicao: SAE</li>
-                  <li>Colocacao: --</li>
-                  <li>Categoria: Micro</li>
+                  <li v-for="(item, index) in project.highlights" :key="index">
+                    • {{ item }}
+                  </li>
                 </ul>
               </div>
             </div>
@@ -152,7 +162,9 @@ watch(
 
 .modal-enter-active .relative,
 .modal-leave-active .relative {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .modal-enter-from,

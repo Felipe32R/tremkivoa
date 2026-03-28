@@ -1,13 +1,21 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed, nextTick } from "vue";
 
-const { t } = useI18n();
+const { t, tm } = useI18n();
 
-const timelineYears = ["2010", "2012", "2015", "2018", "2023"];
+const timelineObject = computed(
+  () => tm("trajectory.timeline") as Record<string, any>,
+);
+
+const timelineYears = computed(() =>
+  Object.keys(timelineObject.value).sort((a, b) => Number(a) - Number(b)),
+);
 
 const timelineItems = ref<HTMLElement[]>([]);
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {

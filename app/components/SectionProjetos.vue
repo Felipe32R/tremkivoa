@@ -1,14 +1,20 @@
 <script setup lang="ts">
 import "vue3-carousel/carousel.css";
 import { Carousel, Slide, Navigation } from "vue3-carousel";
+import { computed, ref } from "vue";
 
 const { t } = useI18n();
+import { projects } from "~/data/projects";
 
 interface Project {
   id: number;
-  name: string;
   year: string;
-  description?: string;
+  title: string;
+  description: string;
+  competition: string;
+  placement: string;
+  category: string;
+  highlights: string[];
 }
 
 const carouselConfig = {
@@ -16,25 +22,11 @@ const carouselConfig = {
   snapAlign: "start" as const,
   wrapAround: true,
   breakpoints: {
-    640: {
-      itemsToShow: 1.8,
-    },
-    768: {
-      itemsToShow: 2.5,
-    },
-    1024: {
-      itemsToShow: 3,
-    },
+    640: { itemsToShow: 1.8 },
+    768: { itemsToShow: 2.5 },
+    1024: { itemsToShow: 3 },
   },
 };
-
-const projects: Project[] = [
-  { id: 1, name: "Project1", year: "2024" },
-  { id: 2, name: "Project2", year: "2023" },
-  { id: 3, name: "Project3", year: "2022" },
-  { id: 4, name: "Project4", year: "2021" },
-  { id: 5, name: "Project5", year: "2020" },
-];
 
 const isModalOpen = ref(false);
 const selectedProject = ref<Project | null>(null);
@@ -53,22 +45,24 @@ function closeModal() {
 <template>
   <section id="projetos" class="relative bg-white-off py-16 md:py-24">
     <!-- Title -->
-    <h2
-      class="text-3xl md:text-5xl font-bold text-blue-dark text-center mb-12 md:mb-16"
-    >
+    <h2 class="text-3xl md:text-5xl font-bold text-blue-dark text-center mb-4">
       {{ t("projects.title") }}
     </h2>
+
+    <p class="text-center text-blue-dark/70 max-w-2xl mx-auto mb-12">
+      {{ t("projects.subtitle") }}
+    </p>
 
     <!-- Carousel -->
     <div class="relative px-16 md:px-32 lg:px-64">
       <Carousel v-bind="carouselConfig">
         <Slide v-for="project in projects" :key="project.id">
           <div
-            class="carousel__item px-2 md:px-4 w-full cursor-pointer group"
+            class="px-4 w-full cursor-pointer group"
             @click="openProjectModal(project)"
           >
             <div
-              class="aspect-4/3 rounded-lg overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]"
+              class="aspect-4/3 rounded-xl p-6 flex flex-col justify-between transition-all duration-300 group-hover:scale-[1.03]"
               style="
                 background: linear-gradient(
                   to bottom right,
@@ -76,12 +70,22 @@ function closeModal() {
                   #00003e 100%
                 );
               "
-            ></div>
-            <p
-              class="text-gray-500 text-sm mt-2 text-left group-hover:text-blue-dark transition-colors"
             >
-              {{ project.name }}
-            </p>
+              <!-- Year -->
+              <span class="text-red-tkv font-bold text-xl">
+                {{ project.year }}
+              </span>
+
+              <!-- Title -->
+              <h3 class="text-white font-bold text-lg mt-2">
+                {{ project.title }}
+              </h3>
+
+              <!-- Description -->
+              <p class="text-white/70 text-sm mt-2 line-clamp-3">
+                {{ project.description }}
+              </p>
+            </div>
           </div>
         </Slide>
 
@@ -91,7 +95,7 @@ function closeModal() {
       </Carousel>
     </div>
 
-    <!-- Project Modal -->
+    <!-- Modal -->
     <ProjectModal
       :project="selectedProject"
       :is-open="isModalOpen"
